@@ -1,23 +1,24 @@
-import React from 'react';
-import { Resizable } from 'react-resizable';
+"use client"
 
-function App() {
-  const [width, setWidth] = React.useState(200);
-  const [height, setHeight] = React.useState(200);
+import { Edit } from '@/components/Edit';
+import { RecoilRoot } from 'recoil';
 
+export default function Home() {
   return (
-    <Resizable
-      width={width}
-      height={height}
-      onResize={(event, { size }) => {
-        // Use 'element' if needed
-        setWidth(size.width);
-        setHeight(size.height);
-      }}
-    >
-      <div className="App">
-        <h1>Hello, world!</h1>
+    <RecoilRoot>
+      <div className='flex flex-row w-full h-full'>
+        <div className='w-1/4'>
+          sidebar
+        </div>
+        <div className='flex flex-col w-3/4 h-full'>
+          <div className='h-2/3'>
+            <Edit/>
+          </div>
+          <div className='h-1/3'>
+            terminal
+          </div>
+        </div>
       </div>
-    </Resizable>
+    </RecoilRoot>
   );
 }
