@@ -1,6 +1,7 @@
 "use client"
 
 import { Edit } from '@/components/Edit';
+import Term from '@/components/Term';
 import { RecoilRoot } from 'recoil';
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
             <Edit/>
           </div>
           <div className='h-1/3'>
-            terminal
+            <Term/>
           </div>
         </div>
       </div>
